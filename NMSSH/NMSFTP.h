@@ -103,6 +103,8 @@
  */
 - (nullable NSArray<NMSFTPFile *> *)contentsOfDirectoryAtPath:(nonnull NSString *)path;
 
+- (nullable NSString *)GetSymbolLinkRealPath:(nonnull NSString *)path;
+
 /// ----------------------------------------------------------------------------
 /// @name Manipulate symlinks and files
 /// ----------------------------------------------------------------------------

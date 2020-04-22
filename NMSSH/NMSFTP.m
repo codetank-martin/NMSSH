@@ -165,6 +165,12 @@
     }];
 }
 
+- (NSString *)GetSymbolLinkRealPath:(NSString *)path {
+    char buffer[1024];
+    int rc = libssh2_sftp_realpath(self.sftpSession, [path UTF8String], buffer, sizeof(buffer));
+    return [[NSString alloc] initWithBytes:buffer length:rc encoding:NSUTF8StringEncoding];
+}
+
 // -----------------------------------------------------------------------------
 #pragma mark - MANIPULATE SYMLINKS AND FILES
 // -----------------------------------------------------------------------------
